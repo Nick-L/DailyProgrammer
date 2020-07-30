@@ -3,10 +3,10 @@ using DailyProgrammer.Intermediate.Challenge_360;
 using System.Numerics;
 using DailyProgrammerTests.Properties;
 
-namespace DailyProgrammerTests.Intermediate
+namespace DailyProgrammerTests.Intermediate.Challenge_360
 {
     [TestClass]
-    public class Challenge_360_Tests
+    public class NearestAeroplane_Tests
     {
         private const float EifelTowerLatitude = 48.8584f;
         private const float EifelTowerLongitude = 2.2945f;
