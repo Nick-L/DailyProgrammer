@@ -20,6 +20,16 @@ namespace DailyProgrammer.Intermediate.Challenge_375
             }
         }
 
+        public int GetNumberOfCards()
+        {
+            return Cards.Count;
+        }
+
+        public CardState GetCardState(int index)
+        {
+            return Cards[index].State;
+        }
+
         public void RemoveCard(int index)
         {
             if(index < 0 || index > LastCardIndex)
