@@ -56,6 +56,18 @@ namespace DailyProgrammerTests.Intermediate.Challenge_375
             Assert.ThrowsException<InvalidOperationException>(() => { game.RemoveCard(INPUT_WITH_ISLANDS.IndexOf('.')); });
         }
 
+        [TestMethod]
+        public void CorrectlyIdentifiesIslands()
+        {
+            CreateGame_WithIslands();
+
+            Assert.IsTrue(game.IslandExists());
+
+            CreateGame_WithoutIslands();
+
+            Assert.IsFalse(game.IslandExists());
+        }
+
         private void CreateGame_WithoutIslands()
         {
             game = new Game(INPUT_WITHOUT_ISLANDS);

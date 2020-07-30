@@ -50,6 +50,20 @@ namespace DailyProgrammer.Intermediate.Challenge_375
 
         public bool IslandExists()
         {
+            string[] possibleIslands = CurrentGameState().Split(".");
+
+            foreach(string s in possibleIslands)
+            {
+                if (s.Contains('1') || !s.Contains('0'))
+                {
+                    // Doesn't contain an island
+                    continue;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
