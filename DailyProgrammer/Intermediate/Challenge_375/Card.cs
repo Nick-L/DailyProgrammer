@@ -24,7 +24,7 @@ namespace DailyProgrammer.Intermediate.Challenge_375
             switch (this.State)
             {
                 case CardState.FACE_UP:
-                    this.State = CardState.REMOVED;
+                    this.State = CardState.FACE_DOWN;
                     break;
                 case CardState.FACE_DOWN:
                     this.State = CardState.FACE_UP;
@@ -34,6 +34,19 @@ namespace DailyProgrammer.Intermediate.Challenge_375
                     break;
                 default:
                     throw new Exception($"Error: Unexpected card state was {this.State}");
+            }
+            return this;
+        }
+
+        public Card RemoveCard()
+        {
+            if(this.State == CardState.FACE_UP)
+            {
+                this.State = CardState.REMOVED;
+            }
+            else
+            {
+                throw new InvalidOperationException($"Error: Cannot remove card that isn't face up");
             }
             return this;
         }

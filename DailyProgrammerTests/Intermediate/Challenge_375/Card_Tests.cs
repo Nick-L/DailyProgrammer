@@ -28,9 +28,17 @@ namespace DailyProgrammerTests.Intermediate.Challenge_375
         {
             CreateCards();
 
-            Assert.AreEqual(CardState.REMOVED, faceUpCard.FlipCard().State);
+            Assert.AreEqual(CardState.FACE_DOWN, faceUpCard.FlipCard().State);
             Assert.AreEqual(CardState.FACE_UP, faceDownCard.FlipCard().State);
             Assert.AreEqual(CardState.REMOVED, removedCard.FlipCard().State);
+        }
+
+        [TestMethod]
+        public void FaceUpCardsRemoveCorrectly()
+        {
+            CreateCards();
+
+            Assert.AreEqual(CardState.REMOVED, faceUpCard.RemoveCard().State);
         }
 
         [TestMethod]
@@ -38,6 +46,15 @@ namespace DailyProgrammerTests.Intermediate.Challenge_375
         {
             Assert.ThrowsException<Exception>(() => { new Card('2'); });
         }
+
+        [TestMethod]
+        public void RemovingInvalidCardThrowsError()
+        {
+            CreateCards();
+
+            Assert.ThrowsException<InvalidOperationException>(() => { faceDownCard.RemoveCard(); });
+            Assert.ThrowsException<InvalidOperationException>(() => { removedCard.RemoveCard(); });
+        } 
 
         private void CreateCards()
         {

@@ -32,18 +32,18 @@ namespace DailyProgrammer.Intermediate.Challenge_375
             }
             if(index == 0)
             {
-                Cards[0].FlipCard();
+                Cards[0].RemoveCard();
                 Cards[1].FlipCard();
             }
             else if(index == LastCardIndex)
             {
                 Cards[LastCardIndex - 1].FlipCard();
-                Cards[LastCardIndex].FlipCard();
+                Cards[LastCardIndex].RemoveCard();
             }
             else
             {
                 Cards[index - 1].FlipCard();
-                Cards[index].FlipCard();
+                Cards[index].RemoveCard();
                 Cards[index + 1].FlipCard();
             }
         }
