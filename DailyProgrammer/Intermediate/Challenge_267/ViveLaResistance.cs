@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
+/*
+ * Link to problem on reddit
+ * https://www.reddit.com/r/dailyprogrammer/comments/4jx7y8/20160518_challenge_267_intermediate_vive_la/
+ */
 namespace DailyProgrammer.Intermediate.Challenge_267
 {
     public class ViveLaResistance
