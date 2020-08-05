@@ -10,9 +10,9 @@ namespace DailyProgrammerTests.Intermediate.Challenge_267
     public class ViveLaResistance_Tests
     {
         const string SAMPLE_INPUT_PATH = "Resources/Challenge_267/sampleInputCircuit.txt";
-        const string CHALLENGE_INPUT_PATH_1 = "Resources/Challenge_267/sampleInputCircuit.txt";
-        const string CHALLENGE_INPUT_PATH_2 = "Resources/Challenge_267/sampleInputCircuit.txt";
-        const string CHALLENGE_INPUT_PATH_2a = "Resources/Challenge_267/sampleInputCircuit.txt";
+        const string CHALLENGE_INPUT_PATH_1 = "Resources/Challenge_267/challengeInputCircuit_1.txt";
+        const string CHALLENGE_INPUT_PATH_2 = "Resources/Challenge_267/challengeInputCircuit_2.txt";
+        const string CHALLENGE_INPUT_PATH_2a = "Resources/Challenge_267/challengeInputCircuit_2a.txt";
 
         [TestMethod]
         public void SampleInput()

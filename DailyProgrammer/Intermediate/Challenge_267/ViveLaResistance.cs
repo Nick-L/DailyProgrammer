@@ -11,6 +11,7 @@ namespace DailyProgrammer.Intermediate.Challenge_267
         public double[,] circuit;
         public static double GetResistance(string input)
         {
+            double[,] circuit = ConvertInputToAdjacencyMatrix(input);
             return 0;
         }
 
@@ -60,7 +61,7 @@ namespace DailyProgrammer.Intermediate.Challenge_267
 
         private static double GetParallelResistance(double resistance1, double resistance2)
         {
-            return 0;
+            return 1 / ((1 / resistance1) + (1 / resistance2));
         }
 
     }
