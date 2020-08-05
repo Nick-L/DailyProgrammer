@@ -33,19 +33,22 @@ namespace DailyProgrammer.Intermediate.Challenge_267
                 string[] resistor = line.Split(' ');
                 string node1 = resistor[0];
                 string node2 = resistor[1];
-                string resistance = resistor[2];
+                double resistance = Convert.ToDouble(resistor[2]);
 
                 if(adjacencyMatrix[nodes[node1], nodes[node2]] == 0)
                 {
-                    adjacencyMatrix[nodes[node1], nodes[node2]] = Convert.ToDouble(resistance);
+                    //non directed graph so node1 to node2 is same as node2 to node1
+                    adjacencyMatrix[nodes[node1], nodes[node2]] = resistance;
+                    adjacencyMatrix[nodes[node2], nodes[node1]] = resistance;
                 }
                 else
                 {
-                    adjacencyMatrix[nodes[node1], nodes[node2]] = GetParallelResistance(adjacencyMatrix[nodes[node1], nodes[node2]], Convert.ToDouble(resistance));
+                    resistance = GetParallelResistance(adjacencyMatrix[nodes[node1], nodes[node2]], resistance);
+                    adjacencyMatrix[nodes[node1], nodes[node2]] = resistance;
+                    adjacencyMatrix[nodes[node2], nodes[node1]] = resistance;
                 }
             }
 
-            
             return adjacencyMatrix;
         }
 
