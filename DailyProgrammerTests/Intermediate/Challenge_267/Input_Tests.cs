@@ -9,12 +9,12 @@ namespace DailyProgrammerTests.Intermediate.Challenge_267
     [TestClass]
     public class Input_Tests
     {
-        string sampleInputPath = "Resources/Challenge_267/sampleInputCircuit.txt";
+        string SAMPLE_INPUT_PATH = "Resources/Challenge_267/sampleInputCircuit.txt";
 
         [TestMethod]
         public void SampleInputTest()
         {
-            double[,] adjacencyMatrix = ViveLaResistance.ConvertInputToAdjacencyMatrix(sampleInputPath);
+            double[,] adjacencyMatrix = ViveLaResistance.ConvertInputToAdjacencyMatrix(SAMPLE_INPUT_PATH);
             Assert.AreEqual(adjacencyMatrix[1,2], 50);
         }
     }
