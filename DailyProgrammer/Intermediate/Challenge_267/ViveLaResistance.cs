@@ -16,7 +16,10 @@ namespace DailyProgrammer.Intermediate.Challenge_267
         public static double GetResistance(string input)
         {
             double[,] circuit = ConvertInputToAdjacencyMatrix(input);
-            return 0;
+            bool[] visited = new bool[circuit.GetLength(0)];
+            double resistance = 0;
+            DFS(0, circuit, visited, ref resistance);
+            return resistance;
         }
 
         public static double[,] ConvertInputToAdjacencyMatrix(string inputFile)
@@ -69,6 +72,21 @@ namespace DailyProgrammer.Intermediate.Challenge_267
         private static double GetParallelResistance(double resistance1, double resistance2)
         {
             return 1 / ((1 / resistance1) + (1 / resistance2));
+        }
+
+        private static void DFS(int start, double[,] circuit, bool[] visited, ref double resistance)
+        {
+            visited[start] = true;
+            
+
+            for(int i = 0; i < circuit.GetLength(0); i++)
+            {
+                if(circuit[start, i] != 0 && !visited[i])
+                {
+                    resistance += circuit[start, i];
+                    DFS(i, circuit, visited, ref resistance);
+                }
+            }
         }
 
     }
